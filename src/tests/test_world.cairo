@@ -12,14 +12,12 @@ mod tests {
 
     fn namespace_def() -> NamespaceDef {
         let ndef = NamespaceDef {
-            namespace: "dojo_starter",
-            resources: [
+            namespace: "dojo_starter", resources: [
                 TestResource::Model(m_Position::TEST_CLASS_HASH),
                 TestResource::Model(m_Moves::TEST_CLASS_HASH),
                 TestResource::Event(actions::e_Moved::TEST_CLASS_HASH),
                 TestResource::Contract(actions::TEST_CLASS_HASH),
-            ]
-                .span(),
+            ].span(),
         };
 
         ndef
@@ -29,8 +27,7 @@ mod tests {
         [
             ContractDefTrait::new(@"dojo_starter", @"actions")
                 .with_writer_of([dojo::utils::bytearray_hash(@"dojo_starter")].span())
-        ]
-            .span()
+        ].span()
     }
 
     #[test]
